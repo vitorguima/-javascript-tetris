@@ -41,10 +41,12 @@ li.color {
   display: inline-block;
   margin-top: 25px;
 }
+
 .tr {
   display: table-row;
   padding: 10px;
 }
+
 .pixel {
   display: table-cell;
   width: 40px;
@@ -75,24 +77,6 @@ li.color {
   font-family: monospace;
   padding-right: 10px;
   padding-left: 10px;
-}
-
-@font-face {
-  font-family: 'minecraftmedium';
-  src: url('minecraft-webfont.woff2') format('woff2'),
-       url('minecraft-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-
-}
-
-@font-face {
-  font-family: 'baby_blocksregular';
-  src: url('baby_blocks-webfont.woff2') format('woff2'),
-       url('baby_blocks-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-
 }
 
 .authority {
