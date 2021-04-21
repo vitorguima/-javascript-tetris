@@ -45,7 +45,7 @@ const zPeace = [[width+1, width+2, width*2, width*2+1], [0, width, width+1, widt
 
 const tPeace = [[1, width, width+1, width+2], [1, width+1, width+2, width*2+1], [width, width+1, width+2, width*2+1], [1, width, width+1, width*2+1]];
 
+const oPeace = [[width, width+1, width*2, width*2+1]]
 
-
-console.log(lPeace)
+const iPeace = [[0, width, width*2, width*3], [width*3, widht*3+1, width*3+2, width*3+3]];
 
