@@ -41,8 +41,9 @@ function addWhiteToBoard() {
 // formato peças tetris
 const lPeace = [[1, width+1, width*2+1, width*2], [width, width*2, width*2+1, width*2+2], [width,width+1, width+2, width*2+2], [1, 2, width+1, width*2+1]];
 
-const zPeace = []
+const zPeace = [[width+1, width+2, width*2, width*2+1], [0, width, width+1, width*2+1], [width+1, width+2, width*2, width*2+1], [0, width, width+1, width*2+1]];
 
+const tPeace = [[1, width, width+1, width+2], [1, width+1, width+2, width*2+1], [width, width+1, width+2, width*2+1], [1, width, width+1, width*2+1]];
 
 
 
