@@ -1,8 +1,14 @@
 const getPaintBoard = document.querySelector('#pixel-board');
 const getHeightDiv = document.querySelectorAll('.tr');
+const paintBoardPixel = document.querySelectorAll('.pixel');
+const startButton = document.querySelector('#start-game');
+const width = 10;
 
+generateHeightDivs(20);
+generateWidthDivs(10);
+addWhiteToBoard();
 
-
+// gera pixel table
 function generateHeightDivs(number) {
 
 	for (let index = 0; index < number; index += 1) {
@@ -12,7 +18,6 @@ function generateHeightDivs(number) {
 	}
 }
 
-// quantidade de divs.pixel existentes dentro de um div.tr
 function generateWidthDivs(number) {
 	const getHeightDiv = document.querySelectorAll('.tr');
 
@@ -33,17 +38,13 @@ function addWhiteToBoard() {
 	}
 }
 
-// busca array a partir da quantidade de pixels
+// formato peças tetris
+const lPeace = [[1, width+1, width*2+1, width*2], [width, width*2, width*2+1, width*2+2], [width,width+1, width+2, width*2+2], [1, 2, width+1, width*2+1]];
 
-generateHeightDivs(20);
-generateWidthDivs(10);
-addWhiteToBoard();
+const zPeace = []
 
-let pixelArray = Array.from(document.querySelectorAll('.pixel'));
-console.log(pixelArray);
 
-for (let index = 0; index < pixelArray.length; index += 10) {
-	if (pixelArray[index].backgroundColor === 'rgb(255, 255, 255)') {
-		pixelArray[index].backgroundColor = 'black';
-	}
-}
+
+
+console.log(lPeace)
+
