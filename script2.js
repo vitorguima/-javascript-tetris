@@ -8,7 +8,7 @@ generateHeightDivs(20);
 generateWidthDivs(10);
 addWhiteToBoard();
 
-// gera pixel table
+// generate pixel table
 function generateHeightDivs(number) {
 
 	for (let index = 0; index < number; index += 1) {
@@ -30,7 +30,7 @@ function generateWidthDivs(number) {
 	}
 }
 
-// adiciona fundo branco para pixel da paintBoard
+// add white background to table
 function addWhiteToBoard() {
 	const paintBoardPixel = document.querySelectorAll('.pixel');
 	for (let index = 0; index < paintBoardPixel.length; index += 1) {
@@ -38,14 +38,40 @@ function addWhiteToBoard() {
 	}
 }
 
-// formato peças tetris
-const lPeace = [[1, width+1, width*2+1, width*2], [width, width*2, width*2+1, width*2+2], [width,width+1, width+2, width*2+2], [1, 2, width+1, width*2+1]];
+// shape and possible positions of peaces
+const lPeace = [
+	[1, width+1, width*2+1, width*2], 
+	[width, width*2, width*2+1, width*2+2], 
+	[width,width+1, width+2, width*2+2], 
+	[1, 2, width+1, width*2+1]
+];
 
-const zPeace = [[width+1, width+2, width*2, width*2+1], [0, width, width+1, width*2+1], [width+1, width+2, width*2, width*2+1], [0, width, width+1, width*2+1]];
+const zPeace = [
+	[width+1, width+2, width*2, width*2+1], 
+	[0, width, width+1, width*2+1], 
+	[width+1, width+2, width*2, width*2+1], 
+	[0, width, width+1, width*2+1]
+];
 
-const tPeace = [[1, width, width+1, width+2], [1, width+1, width+2, width*2+1], [width, width+1, width+2, width*2+1], [1, width, width+1, width*2+1]];
+const tPeace = [[1, width, width+1, width+2], 
+[1, width+1, width+2, width*2+1], 
+[width, width+1, width+2, width*2+1], 
+[1, width, width+1, width*2+1]
+];
 
-const oPeace = [[width, width+1, width*2, width*2+1]]
+const oPeace = [[width, width+1, width*2, width*2+1], 
+[width, width+1, width*2, width*2+1],
+[width, width+1, width*2, width*2+1],
+[width, width+1, width*2, width*2+1]
+]
 
-const iPeace = [[0, width, width*2, width*3], [width*3, widht*3+1, width*3+2, width*3+3]];
+const iPeace = [[0, width, width*2, width*3], 
+[width*3, width*3+1, width*3+2, width*3+3],
+[0, width, width*2, width*3], 
+[width*3, width*3+1, width*3+2, width*3+3]
+];
+
+const peacesArray = [lPeace, zPeace, tPeace, oPeace, iPeace];
+
+console.log(peacesArray[0][0]);
 
