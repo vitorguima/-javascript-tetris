@@ -1,0 +1,132 @@
+/* resoluçao 1366 x 768 */
+body {
+  text-align: center;
+  margin: 0;
+  background-image: linear-gradient(180deg, rgb(199, 247, 253), rgb(238, 165, 253));
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h1 {
+  font-family: baby_blocksregular;
+  letter-spacing: 2px;
+  font-size: 40px;
+  margin-bottom: 25px;
+  margin-top: 45px;
+}
+
+.palette-wrapper {
+  margin: 0;
+  text-align: center;
+}
+
+#color-palette {
+  list-style-type: none;
+  display: inline-block;
+  padding-inline-start: 0;
+}
+
+li.color {
+  display: inline-block;
+  border:  black solid 1px;
+  padding: 25px;
+}
+
+.table-wrapper {
+  text-align: center;
+  margin: 0;
+}
+
+#pixel-board {
+  display: inline-block;
+  margin-top: 25px;
+}
+.tr {
+  display: table-row;
+  padding: 10px;
+}
+.pixel {
+  display: table-cell;
+  width: 40px;
+  height: 40px;
+  border: black solid 1px;
+  margin: 5px;
+}
+
+#clear-board {
+  margin-bottom: 15px;
+  display: inline-block;
+  font-family: monospace;
+}
+
+.size-form {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 15px;
+}
+
+#board-size {
+  width: 100px;
+  margin-left:5px;
+}
+
+#generate-board {
+  margin-left: 5px;
+  font-family: monospace;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+@font-face {
+  font-family: 'minecraftmedium';
+  src: url('minecraft-webfont.woff2') format('woff2'),
+       url('minecraft-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'baby_blocksregular';
+  src: url('baby_blocks-webfont.woff2') format('woff2'),
+       url('baby_blocks-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.authority {
+  color: rgba(240, 255, 255, 0.815);
+  font-family: minecraftmedium;
+}
+
+.selected-color {
+  display:inline-block;
+  border: black solid 1px;
+  padding: 15px;
+  margin-top:20px;
+}
+
+.color-subtitle {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 15px;
+  padding-right: 5px;
+}
+
+.paint-all {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+}
+
+.erase-pixel {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+}
+
+.white-pixel {
+  background-color: white;
+}
+}
