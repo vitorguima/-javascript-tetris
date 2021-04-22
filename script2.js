@@ -1,12 +1,51 @@
-const getPaintBoard = document.querySelector('#pixel-board');
-const getHeightDiv = document.querySelectorAll('.tr');
-const paintBoardPixel = document.querySelectorAll('.pixel');
+const getPaintBoard = document.getElementById('pixel-board');
+const getHeightDiv = document.getElementsByClassName('tr');
+const tetrisBoard = document.getElementsByClassName('pixel');
 const startButton = document.querySelector('#start-game');
 const width = 10;
 
-generateHeightDivs(20);
-generateWidthDivs(10);
-addWhiteToBoard();
+function start() {
+	generateHeightDivs(20);
+	generateWidthDivs(10);
+	addWhiteToBoard();
+}
+
+window.onload = start();
+
+const tetrisBoardArray = Array.from(tetrisBoard);
+
+// peaces of the game
+const lPeace = [
+	[1, width + 1, width * 2 + 1, width * 2],
+	[width, width * 2, width * 2 + 1, width * 2 + 2],
+	[width, width + 1, width + 2, width * 2 + 2],
+	[1, 2, width + 1, width * 2 + 1]
+];
+const zPeace = [
+	[width + 1, width + 2, width * 2, width * 2 + 1],
+	[0, width, width + 1, width * 2 + 1],
+	[width + 1, width + 2, width * 2, width * 2 + 1],
+	[0, width, width + 1, width * 2 + 1]
+];
+const tPeace = [
+	[1, width, width + 1, width + 2],
+	[1, width + 1, width + 2, width * 2 + 1],
+	[width, width + 1, width + 2, width * 2 + 1],
+	[1, width, width + 1, width * 2 + 1]
+];
+const oPeace = [
+	[width, width + 1, width * 2, width * 2 + 1],
+	[width, width + 1, width * 2, width * 2 + 1],
+	[width, width + 1, width * 2, width * 2 + 1],
+	[width, width + 1, width * 2, width * 2 + 1]
+]
+const iPeace = [
+	[0, width, width * 2, width * 3],
+	[width * 3, width * 3 + 1, width * 3 + 2, width * 3 + 3],
+	[0, width, width * 2, width * 3],
+	[width * 3, width * 3 + 1, width * 3 + 2, width * 3 + 3]
+];
+const peacesArray = [lPeace, zPeace, tPeace, oPeace, iPeace];
 
 // generate pixel table
 function generateHeightDivs(number) {
@@ -19,7 +58,6 @@ function generateHeightDivs(number) {
 }
 
 function generateWidthDivs(number) {
-	const getHeightDiv = document.querySelectorAll('.tr');
 
 	for (let index = 0; index < getHeightDiv.length; index += 1) {
 		for (let index2 = 0; index2 < number; index2 += 1) {
@@ -32,46 +70,20 @@ function generateWidthDivs(number) {
 
 // add white background to table
 function addWhiteToBoard() {
-	const paintBoardPixel = document.querySelectorAll('.pixel');
-	for (let index = 0; index < paintBoardPixel.length; index += 1) {
-		paintBoardPixel[index].style.backgroundColor = 'rgb(255, 255, 255)';
+	for (let index = 0; index < tetrisBoard.length; index += 1) {
+		tetrisBoard[index].style.backgroundColor = 'rgb(255, 255, 255)';
 	}
 }
 
-// shape and possible positions of peaces
-const lPeace = [
-	[1, width+1, width*2+1, width*2], 
-	[width, width*2, width*2+1, width*2+2], 
-	[width,width+1, width+2, width*2+2], 
-	[1, 2, width+1, width*2+1]
-];
+// paint peaces shape
+function paintPeaces() {
+	for (let index = 0; index < tetrisBoardArray; index += 1) {
+		tetrisBoardArray[peacesArray[0][0].className = 'paint-peace'];
+	}
+	console.log(tetrisBoardArray);
+	console.log(peacesArray[0][0]);
+} 
 
-const zPeace = [
-	[width+1, width+2, width*2, width*2+1], 
-	[0, width, width+1, width*2+1], 
-	[width+1, width+2, width*2, width*2+1], 
-	[0, width, width+1, width*2+1]
-];
+paintPeaces();
 
-const tPeace = [[1, width, width+1, width+2], 
-[1, width+1, width+2, width*2+1], 
-[width, width+1, width+2, width*2+1], 
-[1, width, width+1, width*2+1]
-];
-
-const oPeace = [[width, width+1, width*2, width*2+1], 
-[width, width+1, width*2, width*2+1],
-[width, width+1, width*2, width*2+1],
-[width, width+1, width*2, width*2+1]
-]
-
-const iPeace = [[0, width, width*2, width*3], 
-[width*3, width*3+1, width*3+2, width*3+3],
-[0, width, width*2, width*3], 
-[width*3, width*3+1, width*3+2, width*3+3]
-];
-
-const peacesArray = [lPeace, zPeace, tPeace, oPeace, iPeace];
-
-console.log(peacesArray[0][0]);
 
