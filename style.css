@@ -35,17 +35,6 @@ h1 {
   border: black solid 1px;
 }
 
-
-.white-pixel {
-  background-color: white;
-}
-
-.tetris-table {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-}
-
 #start-game {
   flex-basis: 10px;
   align-self: center;
@@ -57,7 +46,10 @@ h1 {
   padding: 20px;
 }
 
-.paint-peace {
+.paint-piece {
   background-color: black;
 }
 
+div.tr {
+  background-color: white;
+}
