@@ -70,16 +70,33 @@ function generateWidthDivs(number) {
 let currentPosition = 4;
 
 // randomize piece and its position
-let currentPiece = piecesArray[Math.floor(Math.random() * 5)][Math.floor(Math.random() * 4)];
+let currentPiece = piecesArray[Math.floor(Math.random() * piecesArray.length)][Math.floor(Math.random() * 4)];
 
 const tetrisPixelArray = Array.from(tetrisPixel);
 
+// draw tetrisPiece
 const draw = () => {
-	for (index of currentPiece) {
-		tetrisPixelArray[currentPosition + index].classList.add('paint-piece')
-	}
+	currentPiece.forEach((index) => {
+		tetrisPixelArray[index + currentPosition].classList.add('paint-piece');
+	})
+};
+
+draw()
+
+// undraw tetrisPiece
+const undraw = () => {
+	currentPiece.forEach((index) => {
+		tetrisPixelArray[index + currentPosition].classList.remove('paint-piece');
+	})
 }
 
-draw();
+// move the tetrisPiece down
+const moveDown = () => {
+	undraw();
+	currentPosition += width;
+	draw();
+}
+
+timerMoveDown = setInterval(moveDown, 1000);
 
 
